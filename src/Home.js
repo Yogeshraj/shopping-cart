@@ -44,7 +44,11 @@ function Home() {
             price={98.99}
             image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
             rating={5}
+<<<<<<< HEAD
           /> */}
+=======
+          />
+>>>>>>> 11d076dfcb095d5b4de1b45c351f063a067e80ad
         </div>
       </div>
     </div>
