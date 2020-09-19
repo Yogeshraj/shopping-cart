@@ -6,10 +6,6 @@ function Product({ id, title, price, image, rating }) {
   const [{ basket }, dispatch] = useStateValue();
   const idRef = useRef(null);
 
-  useEffect(()=>{
-    console.log('Hello');
-  },[addToBasket])
-
   const addToBasket = (e) => {
     dispatch({
       type: "ADD_TO_BASKET",
