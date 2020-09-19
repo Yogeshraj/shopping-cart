@@ -10,6 +10,15 @@ function CheckoutProduct({ id, image, title, price, rating, quantity }) {
       id: id,
     });
   };
+
+  const handleChange = (val) =>{
+    dispatch({
+      type: "UPDATE_BASKET",
+      count: val,
+    });
+  }
+
+
   return (
     <div className="checkoutProduct">
       <img src={image} className="checkoutProduct__image" />
@@ -19,7 +28,14 @@ function CheckoutProduct({ id, image, title, price, rating, quantity }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <p>Quantity: {quantity}</p>
+        <p>
+          Quantity:
+          <select value="0" onChange={event => handleChange(event.target.value)}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </p>
         <div className="checkoutProduct__rating">
           {Array(rating)
             .fill()

@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Product from "./Components/Product";
+import { data } from "./Data.json";
 
 function Home() {
   return (
     <div className="home">
       <div className="home__container">
         <div className="home__row">
-          <Product
+          {data.map((item, index) => (
+            <Product key={index}
+              id={item.id}
+              title={item.title}
+              price={item.price}
+              image={item.image}
+              rating={item.rating}
+            />
+          ))}
+          {/* <Product
             id="123456"
             title="The Lean Startup"
             price={29.99}
@@ -21,9 +31,6 @@ function Home() {
             image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
             rating={4}
           />
-        {/* </div>
-
-        <div className="home__row"> */}
           <Product
             id="345678"
             title="Mi Band 3 (Black)"
@@ -37,25 +44,8 @@ function Home() {
             price={98.99}
             image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
             rating={5}
-          />
-          {/* <Product
-            id="567890"
-            title="Apple iPad (10.2-inch, Wi-Fi, 32GB) - Space Grey (Latest Model)"
-            price={599.0}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L.AC_SX385_.jpg"
-            rating={5}
           /> */}
         </div>
-
-        {/* <div className="home__row">
-          <Product
-            id="345678"
-            title="Samsung LC49HG90DMUXEN 48.9-inch Ultra Wide Curved Monitor (Black)"
-            price={199.0}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
-            rating={3}
-          />
-        </div> */}
       </div>
     </div>
   );
